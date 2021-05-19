@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .main_content {
+            margin-top: 10px;
+            margin-left: 30%;
+        }
+
+        form.temp_form input[type=text] {
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: left;
+            width: 40%;
+            background: #f1f1f1;
+        }
+
+        form.temp_form button {
+            float: left;
+            width: 8%;
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 17px;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+        }
+
+        .tempInformation {
+            text-align: center;
+        }
+
+        form.temp_form button:hover {
+            background: #0b7dda;
+        }
+
+        form.temp_form::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+
+    <title>Search City</title>
+</head>
+
+<body>
+
+    {{>navbar}}
+
+    <div class="row">
+        <div class="main_content">
+            <form class="temp_form">
+                <input type="text" id="cityName" placeholder="Enter your city name" autocomplete="off">
+                <button type="submit" id="submitBtn">Search</button>
+            </form>
+        </div>
+        <div class="tempInformation">
+            <div class="top_layer">
+                <p id="day"></p>
+                <p id="today_date"></p>
+                <p id="today_month"></p>
+            </div>
+            <div class="main_layer">
+                <p id="city_name"></p>
+                <div class="middle_layer data_hide">
+                    <p id="temp"><span id="temp_real_val">0</span>°<sup></sup>C</p>
+                    <p id="temp_status"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section -->
+
+    {{>footer}}
+
+    <script src="js/main.js"></script>
+
+    <script>
+        const getCurrentDay = () => {
+            let weekDay = new Array(7);
+            weekDay[0] = "Sunday";
+            weekDay[1] = "Monday";
+            weekDay[2] = "Tuesday";
+            weekDay[3] = "Wednesday";
+            weekDay[4] = "Thursday";
+            weekDay[5] = "Friday";
+            weekDay[6] = "Saturday";
+
+            let months = [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sept",
+                "Oct",
+                "Nov",
+                "Dec",
+            ];
+
+            let currentTime = new Date();
+            let days = weekDay[currentTime.getDay()];
+            let date = currentTime.getDate();
+            let month = months[currentTime.getMonth()];
+
+            let day = document.getElementById('day');
+            let today_date = document.getElementById('today_date');
+            let today_month = document.getElementById('today_month');
+
+            day.innerText = days;
+            today_date.innerText = date;
+            today_month.innerText = month;
+        };
+        getCurrentDay();
+    </script>
+</body>
+
+</html>

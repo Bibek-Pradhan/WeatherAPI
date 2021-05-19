@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Piazzolla:wght@200;300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Piazzolla', serif;
+  }
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+
+.container {
+  background-color: #05112b;
+  width: 100%;
+  height: 10%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* w3 school */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 16px;
+  text-decoration: none;
+}
+
+a:active {
+  color: rgb(255, 0, 106);
+}
+
+.topic {
+  margin-left: 10%;
+}
+
+.nav-bar {
+  float: right;
+  margin-right: 20%;
+  overflow: auto;
+}
+
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+
+  .column {
+    flex: 50%;
+  }
+
+img {
+    width: 500px;
+    height: 700px;
+    object-fit: contain;
+}
+
+  @media only screen and (max-width:800px) {
+    /* For mobile phones: */
+    .container, .row {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+.column-left {
+  margin-top: 20%;
+  margin-left: 5%;
+}
+
+.column-left button {
+  text-transform: uppercase;
+  border-radius: 30px;
+  box-shadow: 0 8px 6px -6px #000;
+  cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #05112b;
+  color: white;
+  text-align: center;
+}
+
+/* footer p {
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  line-height: 50px;
+} */
+

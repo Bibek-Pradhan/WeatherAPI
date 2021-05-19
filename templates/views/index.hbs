@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .row {
+            display: flex;
+        }
+    </style>
+
+    <title>Weather | App</title>
+</head>
+
+<body>
+
+    {{>navbar}}
+
+    <div class="row">
+        <!-- left side -->
+        <div class="column">
+            <div class="column-left">
+                <p>Welcome to Weather App</p>
+                <h1>Get The Latest <span style="color: #2E6CF2;">Weather</span> Info of Your Choice City</h1>
+                <a href="/weather"><button>check now</button></a>
+            </div>
+        </div>
+
+
+        <!-- right side -->
+        <div class="column">
+            <div class="picture">
+                <img src="images/weather.png" alt="weather" style="width:100%; height: 650px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section -->
+
+    {{>footer}}
+
+</body>
+
+</html>
